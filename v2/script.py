@@ -1,16 +1,16 @@
-import dir_change
-import generate_tex, remove_tex, compile_chosen
+import change_in_dirs
+import functions
 
-a = dir_change.compute_dir_index()
+a = change_in_dirs.compute_dir_index()
 
-generate_tex.generate(2)
-remove_tex.remove(2)
+functions.generate(2)
+functions.remove(2)
 
-b = dir_change.compute_dir_index()
+b = change_in_dirs.compute_dir_index()
 
-data = dir_change.compute_diff(b,a)
+data = change_in_dirs.compute_diff(b,a)
 print(data)
 created_files = data["created"]
 print(created_files)
 
-compile_chosen.compile_and_remove(data)
+functions.compile_and_move(data)
